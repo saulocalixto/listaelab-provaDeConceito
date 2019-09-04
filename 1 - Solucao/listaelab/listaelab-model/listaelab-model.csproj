@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>listaelab_model</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentNHibernate" Version="2.1.2" />
+    <PackageReference Include="NHibernate" Version="5.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\..\.nuget\packages\nhibernate\5.2.5\lib\netstandard2.0\NHibernate.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
