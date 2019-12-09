@@ -9,9 +9,9 @@ Esse software é uma demanda da Fábrica de Software da UFG.
 
 ## Como Usar
 
-[Api](http://sifo.tech/api/)
+[API](http://sifo.tech/api/)
 
-[Documentação](http://sifo.tech/swagger/index.html)
+[Documentação](http://api.sifo.tech/swagger/index.html)
 
 #### Login
 
@@ -30,7 +30,7 @@ Esse software é uma demanda da Fábrica de Software da UFG.
 
 As informações sobre as requisições podem ser adquiridas aqui:
 
-[Documentação](http://sifo.tech/swagger/index.html)
+[Documentação](http://api.sifo.tech/swagger/index.html)
 
 Todas as requisições devem ter no header a tag [Authorization] que deve conter:
 
