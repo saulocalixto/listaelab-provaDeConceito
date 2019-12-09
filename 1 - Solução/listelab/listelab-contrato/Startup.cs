@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace listelab_contrato
+namespace ListElab.Contrato
 {
     public class Startup
     {

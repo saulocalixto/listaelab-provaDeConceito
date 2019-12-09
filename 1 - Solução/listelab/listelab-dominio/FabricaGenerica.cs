@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace listelab_dominio
+namespace ListElab.Dominio
 {
     public static class FabricaGenerica
     {

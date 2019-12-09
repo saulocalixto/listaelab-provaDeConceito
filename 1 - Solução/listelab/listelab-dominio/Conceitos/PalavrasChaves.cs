@@ -1,4 +1,4 @@
-﻿namespace listelab_dominio.Conceitos
+﻿namespace ListElab.Dominio.Conceitos
 {
     public class PalavrasChaves
     {

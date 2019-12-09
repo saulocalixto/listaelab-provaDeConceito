@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>listelab_dominio</RootNamespace>
+    <RootNamespace>ListElab.Dominio</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

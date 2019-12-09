@@ -1,9 +1,9 @@
-﻿using listelab_dominio.CustomAttributes;
+﻿using ListElab.Dominio.CustomAttributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace listelab_dominio.Conceitos
+namespace ListElab.Dominio.Conceitos
 {
     /// <summary>
     /// Representa uma questão discursiva.

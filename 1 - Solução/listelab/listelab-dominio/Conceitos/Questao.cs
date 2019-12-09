@@ -1,9 +1,9 @@
-﻿using listelab_dominio.Abstrato;
+﻿using ListElab.Dominio.Abstrato;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace listelab_dominio.Conceitos
+namespace ListElab.Dominio.Conceitos
 {
     /// <summary>
     /// Representa uma questão genérica.

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace listelab_dominio.InterfaceDeServico
+namespace ListElab.Dominio.InterfaceDeServico
 {
     public interface IServicoPadrao<T>
     {

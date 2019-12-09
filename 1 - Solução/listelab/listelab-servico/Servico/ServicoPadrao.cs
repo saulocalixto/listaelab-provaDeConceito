@@ -1,12 +1,11 @@
-﻿using listelab_data.Repositorios;
-using listelab_dominio.Abstrato;
-using listelab_dominio.InterfaceDeServico;
-using listelab_servico.Validacoes;
+﻿using ListElab.Data.Repositorios;
+using ListElab.Dominio.Abstrato;
+using ListElab.Dominio.InterfaceDeServico;
+using ListElab.Servico.Validacoes;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace listelab_servico.Servico
+namespace ListElab.Servico.ServicosImplementados
 {
     public abstract class ServicoPadrao<T> : IServicoPadrao<T> where T : ObjetoComId
     {

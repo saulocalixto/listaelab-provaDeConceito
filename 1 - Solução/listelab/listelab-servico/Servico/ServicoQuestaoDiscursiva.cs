@@ -1,9 +1,9 @@
-﻿using listelab_data.Repositorios;
-using listelab_dominio.Conceitos;
-using listelab_dominio.InterfaceDeServico;
-using listelab_servico.Validacoes;
+﻿using ListElab.Data.Repositorios;
+using ListElab.Dominio.Conceitos;
+using ListElab.Dominio.InterfaceDeServico;
+using ListElab.Servico.Validacoes;
 
-namespace listelab_servico.Servico
+namespace ListElab.Servico.ServicosImplementados
 {
     public class ServicoQuestaoDiscursiva : ServicoPadrao<QuestaoDiscursiva>, IServicoQuestaoDiscursiva
     {

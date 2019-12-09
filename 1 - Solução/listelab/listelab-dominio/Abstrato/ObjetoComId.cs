@@ -1,9 +1,7 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace listelab_dominio.Abstrato
+namespace ListElab.Dominio.Abstrato
 {
     public abstract class ObjetoComId
     {

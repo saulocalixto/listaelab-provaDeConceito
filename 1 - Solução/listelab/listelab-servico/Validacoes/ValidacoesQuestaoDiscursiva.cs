@@ -1,9 +1,9 @@
-﻿using listelab_dominio.Conceitos;
-using FluentValidation;
+﻿using FluentValidation;
+using ListElab.Dominio.Conceitos;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace listelab_servico.Validacoes
+namespace ListElab.Servico.Validacoes
 {
     public class ValidacoesQuestaoDiscursiva : ValidadorPadrao<QuestaoDiscursiva>
     {
