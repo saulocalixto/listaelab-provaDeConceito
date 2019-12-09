@@ -16,6 +16,11 @@ namespace listaelab_testes.TestesValidador
             _validador = new ValidacoesQuestaoDiscursiva();
         }
 
+        /// <sumary>
+        /// Testa se o código de uma Questão Discursiva é válido.
+        /// </sumary>
+        /// <param name="codigo">Código de Questão Discursiva a ser testado</param>
+        /// <param name="ehParaDarErro">Booleano que determina o resultado esperado do teste</param>
         [Test, Sequential]
         public void TesteRegraCodigoValido(
             [Values(-1, 0, 1, 10000)] int codigo,
@@ -28,6 +33,11 @@ namespace listaelab_testes.TestesValidador
             EfetueChecagem(ehParaDarErro, questaoDiscursiva, _validador, "O código da questão deve ser superior à 0 e menor ou igual à 9999");
         }
 
+        /// <sumary>
+        /// Testa se uma Questão Discursiva sendo criada possui enunciado informado.
+        /// </sumary>
+        /// <param name="enunciado">Enunciado de Questão Discursiva a ser testada</param>
+        /// <param name="ehParaDarErro">Booleano que determina o resultado esperado do teste</param>
         [Test, Sequential]
         public void TesteRegraDeveTerEnunciado(
             [Values(null, "", "Enunciado.", " ")] string enunciado,
@@ -40,6 +50,10 @@ namespace listaelab_testes.TestesValidador
             EfetueChecagem(ehParaDarErro, questaoDiscursiva, _validador, "O enunciado da questão deve ser informado");
         }
 
+        /// <sumary>
+        /// Testa se uma Questão Discursiva sendo criada possui PalavrasChaves e Peso informados.
+        /// </sumary>
+        /// <param name="palavraChaveInformado">Booleano que determina se a Questão Discursiva possui PalavrasChave</param>
         [Test, Theory]
         public void TesteRegraPalavraChaveInformado(bool palavraChaveInformado)
         {
