@@ -98,7 +98,7 @@ namespace ListElab.Contrato.Controllers
         }
 
         /// <summary>
-        /// Exclue uma questão discursiva.
+        /// Exclui uma questão discursiva.
         /// </summary>
         /// <param name="codigo">Código da questão discursiva que se deseja excluir.</param>
         /// <returns>Retorna objeto com resultado da requisição.</returns>

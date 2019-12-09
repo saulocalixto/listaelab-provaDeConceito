@@ -8,7 +8,8 @@ namespace ListElab.Servico.Validacoes
     public class ValidacoesQuestaoDiscursiva : ValidadorPadrao<QuestaoDiscursiva>
     {
         /// <summary>
-        /// Número do requisito.
+        /// Adiciona a validação de código da questão ao Validador, verificando se o código está ente um intervalo válido.
+        /// ID do requisito: não se aplica.
         /// </summary>
         public void AssineRegraCodigoValido()
         {
@@ -18,7 +19,8 @@ namespace ListElab.Servico.Validacoes
         }
 
         /// <summary>
-        /// Número do requisito.
+        /// Adiciona a validação de enunciado da questão ao Validador, verificando se uma questão possui enunciado.
+        /// ID do requisito: UC003
         /// </summary>
         public void AssineRegraDeveTerEnunciado()
         {
@@ -28,7 +30,8 @@ namespace ListElab.Servico.Validacoes
         }
 
         /// <summary>
-        /// Número do requisito.
+        /// Adiciona a validação de palavras chave da questão ao Validador, verificando se uma questão possui palavras chave informadas.
+        /// ID do requisito: UC003.4
         /// </summary>
         public void AssineRegraPalavraChaveInformado()
         {
