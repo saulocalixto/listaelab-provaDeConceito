@@ -1,0 +1,56 @@
+dist: trusty
+
+branches:
+  only:
+  - master
+  - dev
+  - /feature*/
+
+stages:
+- name: build feature
+  if: branch =~ feature*
+- name: build dev docker image
+  if: branch = dev
+- name: build prod docker image
+  if: branch = master
+  
+jobs:
+  include:
+    - stage: build feature
+      script: 
+      - sed -i 's)$cstring)'"$CONNECTION_STRING_DEV"')g' ./1\ -\ Solução/listelab/Dockerfile/listelab-contrato/App.config.example
+      - rm -f ./1\ -\ Solução/listelab/Dockerfile/listelab-contrato/App.config
+      - mv ./1\ -\ Solução/listelab/Dockerfile/listelab-contrato/App.config.example ./1\ -\ Solução/listelab/Dockerfile/listelab-contrato/App.config
+      - docker run --name dotnet-scanner -it --rm -v $(pwd):/project -e PROJECT_ORGANIZATION=ufg-es-listelab -e PROJECT_KEY=UFG-ES-LISTELAB_ListElab-Server -e HOST=https://sonarcloud.io -e LOGIN_KEY=$SONAR_TOKEN gustavobatista/docker-dotnet-sonarscanner
+      - docker build --no-cache -t $DOCKER_USERNAME/listelab-server:dev ./1\ -\ Solução/listelab/Dockerfile
+    - stage: build dev docker image
+      script:
+      - sed -i 's)$cstring)'"$CONNECTION_STRING_DEV"')g' ./1\ -\ Solução/listelab/Dockerfile/listelab-contrato/App.config.example
+      - rm -f ./1\ -\ Solução/listelab/Dockerfile/listelab-contrato/App.config
+      - mv ./1\ -\ Solução/listelab/Dockerfile/listelab-contrato/App.config.example ./1\ -\ Solução/listelab/Dockerfile/listelab-contrato/App.config
+      - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+      - docker run --name dotnet-scanner -it --rm -v $(pwd):/project -e PROJECT_ORGANIZATION=ufg-es-listelab -e PROJECT_KEY=UFG-ES-LISTELAB_ListElab-Server -e HOST=https://sonarcloud.io -e LOGIN_KEY=$SONAR_TOKEN gustavobatista/docker-dotnet-sonarscanner
+      - docker build --no-cache -t $DOCKER_USERNAME/listelab-server:dev ./1\ -\ Solução/listelab/Dockerfile
+      - docker images
+      - docker tag $DOCKER_USERNAME/listelab-server:dev $DOCKER_USERNAME/listelab-server:dev
+      - docker push $DOCKER_USERNAME/listelab-server:dev
+    - stage: build prod docker image
+      script:
+      - sed -i 's)$cstring)'"$CONNECTION_STRING_PROD"')g' ./1\ -\ Solução/listelab/Dockerfile/listelab-contrato/App.config.example
+      - rm -f ./1\ -\ Solução/listelab/Dockerfile/listelab-contrato/App.config
+      - mv ./1\ -\ Solução/listelab/Dockerfile/listelab-contrato/App.config.example ./1\ -\ Solução/listelab/Dockerfile/listelab-contrato/App.config
+      - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+      - docker run --name dotnet-scanner -it --rm -v $(pwd):/project -e PROJECT_ORGANIZATION=ufg-es-listelab -e PROJECT_KEY=UFG-ES-LISTELAB_ListElab-Server -e HOST=https://sonarcloud.io -e LOGIN_KEY=$SONAR_TOKEN gustavobatista/docker-dotnet-sonarscanner
+      - docker build --no-cache -t $DOCKER_USERNAME/listelab-server ./1\ -\ Solução/listelab/Dockerfile
+      - docker images
+      - docker tag $DOCKER_USERNAME/listelab-server $DOCKER_USERNAME/listelab-server
+      - docker push $DOCKER_USERNAME/listelab-server
+
+after_success:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh success $WEBHOOK_URL
+after_failure:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh failure $WEBHOOK_URL
