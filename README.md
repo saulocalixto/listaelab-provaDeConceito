@@ -9,9 +9,7 @@ Esse software é uma demanda da Fábrica de Software da UFG.
 
 ## Como Usar
 
-[API](http://sifo.tech/api/)
-
-[Documentação](http://api.sifo.tech/swagger/index.html)
+[Documentação da API](http://api.sifo.tech/swagger/index.html)
 
 #### Login
 
@@ -38,7 +36,7 @@ Todas as requisições devem ter no header a tag [Authorization] que deve conter
 
 ## Arquitetura API
 
-A api foi dividida em camadas utilizando a seguinte organização:
+A API foi dividida em camadas utilizando a seguinte organização:
 
 ![diagrama do projetista](https://raw.githubusercontent.com/UFG-ES-LISTELAB/ListElab-Server/dev/diagramas/visaoProjetista.png)
 
@@ -46,7 +44,7 @@ As classes obedecem a seguinte organização:
 
 ![diagrama de classes](https://raw.githubusercontent.com/UFG-ES-LISTELAB/ListElab-Server/dev/diagramas/digramaDeClasses.jpg)
 
-## Para rodar a api
+## Para rodar a API
 
 Caso você queira baixar o código e rodá-lo em sua máquina você precisará atender os seguintes passos:
 
