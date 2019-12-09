@@ -15,5 +15,7 @@ namespace listelab_dominio.Conceitos
         /// Representa as palavras chaves que compõe uma resposta esperada.
         /// </summary>
         public IList<string> PalavrasChaves { get; set; }
+
+        public RespostaDiscursiva RespostaEsperada { get; set; }
     }
 }
